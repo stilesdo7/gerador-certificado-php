@@ -6,20 +6,20 @@ require('PHPMailer/class.phpmailer.php');
 
 
 // --------- Variáveis do Formulário ----- //
-$email    = $_POST['email'];
-$nome     = utf8_decode($_POST['nome']);
-$cpf      = $_POST['cpf'];
+$email    = $_POST['contatosdostiles@gmail.com'];
+$nome     = utf8_decode($_POST['José Lucas Silva Cruz']); 
+$cpf      = $_POST['113.873.833-61'];
 
 // --------- Variáveis que podem vir de um banco de dados por exemplo ----- //
-$empresa  = "Universidade do Lincoln Borges";
-$curso    = "Workshop Segurança da Informação";
-$data     = "29/05/2017";
-$carga_h  = "8 horas";
+$empresa  = "Faculdade de Tecnologia Do Senai";
+$curso    = "Administrado de Tecnologia";
+$data     = "29/05/2020";
+$carga_h  = "240 horas";
 
 
-$texto1 = utf8_decode($empresa);
-$texto2 = utf8_decode("pela participação no ".$curso." \n realizado em ".$data." com carga horária total de ".$carga_h.".");
-$texto3 = utf8_decode("São Paulo, ".utf8_encode(strftime( '%d de %B de %Y', strtotime( date( 'Y-m-d' ) ) )));
+$texto1 = utf8_decode(Senai);
+$texto2 = utf8_decode("pela participação no "tecnológico" \n realizado em ".29/05/2020." com carga horária total de ".240.".");
+$texto3 = utf8_decode("PARNAIBA, ".utf8_encode(strftime( '%d de %B de %Y', strtotime( date( 'Y-m-d' ) ) )));
 
 
 $pdf = new AlphaPDF();
@@ -64,11 +64,11 @@ $pdfdoc = $pdf->Output('', 'S');
 // ******** e também mostrar na tela para caso o e-mail não chegar
 
 $subject = 'Seu Certificado do Workshop';
-$messageBody = "Olá $nome<br><br>É com grande prazer que entregamos o seu certificado.<br>Ele está em anexo nesse e-mail.<br><br>Atenciosamente,<br>Lincoln Borges<br><a href='http://www.lnborges.com.br'>http://www.lnborges.com.br</a>";
+$messageBody = "Olá José Lucas <br><br>É com grande prazer que entregamos o seu certificado.<br>Ele está em anexo nesse e-mail.<br><br>Atenciosamente,<br>Lincoln Borges<br><a href='http://www.lnborges.com.br'>http://www.lnborges.com.br</a>";
 
 
-$mail = new PHPMailer();
-$mail->SetFrom("certificado@lnborges.com.br", "Certificado");
+$mail = new PHPMailer(lukasstylesofficial@gmail.com);
+$mail->SetFrom("certificadosenai", "Certificado");
 $mail->Subject    = $subject;
 $mail->MsgHTML(utf8_decode($messageBody));
 $mail->AddAddress($email); 
