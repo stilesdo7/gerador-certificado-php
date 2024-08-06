@@ -11,7 +11,7 @@ $nome     = utf8_decode($_POST['nome']);
 $cpf      = $_POST['cpf'];
 
 // --------- Variáveis que podem vir de um banco de dados por exemplo ----- //
-$empresa  = "Universidade do Lincoln Borges";
+$empresa  = "Faculdade de tecnologia senai";
 $curso    = "Workshop Segurança da Informação";
 $data     = "29/05/2017";
 $carga_h  = "8 horas";
